@@ -1,0 +1,214 @@
+/* ================= RESET & VARIÁVEIS ================= */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+:root {
+  --primaria: #6366f1;
+  --secundaria: #8b5cf6;
+  --escuro: #0b1020;
+  --maisEscuro: #060a16;
+  --claro: #e5e7eb;
+  --vidro: rgba(255, 255, 255, 0.08);
+}
+
+/* ================= BODY ================= */
+
+body {
+  min-height: 100vh;
+  background: radial-gradient(circle at top, #111827, var(--escuro));
+  color: var(--claro);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* ================= APP ================= */
+
+.app {
+  width: 100%;
+  max-width: 480px;
+  padding: 2.5rem;
+  border-radius: 20px;
+  background: linear-gradient(
+    180deg,
+    rgba(255, 255, 255, 0.08),
+    rgba(255, 255, 255, 0.02)
+  );
+  border: 1px solid var(--vidro);
+  backdrop-filter: blur(12px);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+}
+
+/* ================= TÍTULO ================= */
+
+.app h1 {
+  text-align: center;
+  margin-bottom: 2rem;
+  font-size: 2rem;
+  background: linear-gradient(90deg, var(--primaria), var(--secundaria));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* ================= FORM ================= */
+
+.todo-form {
+  display: flex;
+  gap: 0.6rem;
+  margin-bottom: 1.5rem;
+}
+
+.todo-form input {
+  flex: 1;
+  padding: 0.7rem 0.9rem;
+  border-radius: 12px;
+  border: 1px solid var(--vidro);
+  background: rgba(255, 255, 255, 0.05);
+  color: var(--claro);
+}
+
+.todo-form input::placeholder {
+  color: #9ca3af;
+}
+
+.todo-form input:focus {
+  outline: none;
+  border-color: var(--primaria);
+}
+
+.todo-form button {
+  padding: 0.7rem 1.2rem;
+  border-radius: 12px;
+  border: none;
+  cursor: pointer;
+  color: var(--claro);
+  font-weight: 500;
+  background: linear-gradient(90deg, var(--primaria), var(--secundaria));
+  transition: all 0.3s ease;
+}
+
+.todo-form button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 25px rgba(99, 102, 241, 0.4);
+}
+
+/* ================= STATS ================= */
+
+.todo-stats {
+  text-align: center;
+  font-size: 0.9rem;
+  opacity: 0.85;
+  margin-bottom: 1rem;
+}
+
+/* ================= AÇÕES GLOBAIS ================= */
+
+.acoes-globais {
+  display: flex;
+  gap: 0.6rem;
+  margin-bottom: 1.5rem;
+}
+
+.acoes-globais button {
+  flex: 1;
+  padding: 0.6rem;
+  font-size: 0.8rem;
+  border-radius: 12px;
+  border: 1px solid var(--vidro);
+  background: rgba(255, 255, 255, 0.05);
+  color: var(--claro);
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.acoes-globais button:hover {
+  background: linear-gradient(90deg, var(--primaria), var(--secundaria));
+  box-shadow: 0 8px 20px rgba(99, 102, 241, 0.35);
+}
+
+/* ================= LISTA ================= */
+
+.todo-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+}
+
+/* ================= ITEM ================= */
+
+.todo-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.6rem;
+  padding: 0.8rem 1rem;
+  border-radius: 14px;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid var(--vidro);
+  transition: all 0.3s ease;
+}
+
+.todo-item:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.4);
+}
+
+.todo-item span {
+  flex: 1;
+  cursor: pointer;
+}
+
+.todo-item.completed span {
+  text-decoration: line-through;
+  opacity: 0.5;
+}
+
+/* ================= EDIÇÃO ================= */
+
+.todo-item input {
+  flex: 1;
+  padding: 0.5rem 0.7rem;
+  border-radius: 10px;
+  border: 1px solid var(--vidro);
+  background: rgba(255, 255, 255, 0.08);
+  color: var(--claro);
+}
+
+.todo-item input:focus {
+  outline: none;
+  border-color: var(--primaria);
+}
+
+/* ================= AÇÕES ITEM ================= */
+
+.todo-item .acoes {
+  display: flex;
+  gap: 0.4rem;
+}
+
+.todo-item button {
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: var(--claro);
+  font-size: 1rem;
+  transition: opacity 0.2s ease;
+}
+
+.todo-item button:hover {
+  opacity: 0.6;
+}
+
+/* ================= FOOTER ================= */
+
+p {
+  text-align: center;
+  margin-top: 1.2rem;
+  font-size: 0.85rem;
+  opacity: 0.7;
+}
